@@ -78,6 +78,16 @@
             scrollbar-width: none;
         }
 
+        /* Hide scrollbars for gallery */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
         /* Photo Modal Styles */
         #photoModal {
             backdrop-filter: blur(5px);
@@ -119,47 +129,47 @@
         </div>
     </div>
 
-    <div id="hero-section" class="bg-gray-800 py-12">
+    <div id="hero-section" class="bg-gray-100 py-12">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
-                <div class="text-white">
+                <div class="text-gray-800">
                     <div class="flex items-center space-x-3 mb-6">
                         <span class="bg-green-100 text-green-800 px-3 py-1 text-sm font-semibold rounded">Available
                             Now</span>
                     </div>
-                    <h1 class="text-5xl text-white mb-4 montserrat-bold">PNK Loggins Park 100</h1>
-                    <p class="text-gray-300 mb-8 text-lg">1365 E Hightower Trail, Social Circle, GA 30025</p>
+                    <h1 class="text-5xl text-gray-850 mb-4 montserrat-bold">PNK Loggins Park 100</h1>
+                    <p class="text-gray-600 mb-8 text-lg">1365 E Hightower Trail, Social Circle, GA 30025</p>
 
                     <!-- Property Details Grid -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div>
-                            <div class="text-gray-400 text-sm mb-1">Market:</div>
-                            <div class="text-white font-semibold">Atlanta</div>
+                            <div class="text-gray-600 text-sm mb-1">Market:</div>
+                            <div class="text-gray-850 font-semibold">Atlanta</div>
                         </div>
                         <div>
-                            <div class="text-gray-400 text-sm mb-1">Building Size:</div>
-                            <div class="text-white font-semibold">1,013,902 SF</div>
+                            <div class="text-gray-600 text-sm mb-1">Building Size:</div>
+                            <div class="text-gray-850 font-semibold">1,013,902 SF</div>
                         </div>
                         <div>
-                            <div class="text-gray-400 text-sm mb-1">Location:</div>
-                            <div class="text-white font-semibold">Social Circle, GA</div>
+                            <div class="text-gray-600 text-sm mb-1">Location:</div>
+                            <div class="text-gray-850 font-semibold">Social Circle, GA</div>
                         </div>
                         <div>
-                            <div class="text-gray-400 text-sm mb-1">Year Built:</div>
-                            <div class="text-white font-semibold">2024</div>
+                            <div class="text-gray-600 text-sm mb-1">Year Built:</div>
+                            <div class="text-gray-850 font-semibold">2024</div>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
                     <div class="flex items-center space-x-4">
                         <button
-                            class="bg-white text-gray-800 px-6 py-3 font-semibold flex items-center space-x-2 hover:bg-gray-100 transition-colors">
+                            class="bg-gray-850 text-white px-6 py-3 font-semibold flex items-center space-x-2 hover:bg-gray-700 transition-colors">
                             <i class="fa-solid fa-download"></i>
                             <span>Download Flyer</span>
                         </button>
                         <button
-                            class="border border-white text-white px-6 py-3 font-semibold hover:bg-white hover:text-gray-800 transition-colors">
+                            class="border border-gray-850 text-gray-850 px-6 py-3 font-semibold hover:bg-gray-850 hover:text-white transition-colors">
                             <i class="fa-solid fa-share"></i>
                         </button>
                     </div>
@@ -172,7 +182,7 @@
                             src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png?GoogleAccessId=rga-400%40rgaautomations.iam.gserviceaccount.com&Expires=1907035549&Signature=yOIHSZV53EFtIBSfZzOeDPumWYQn60HFkHk60F3yTUrRp%2F02w1Cviw4ggqlTzT6Rqe9%2BO19toCUHunH%2Fzeg1wqVWxD8MT%2BTBOPJ5l%2BAqvaJMHYKP2omc%2FNHjT%2FMsd2Vn1fv7SCcpTZY582Bk7aFf05eA%2B7BYptCNkKEZNBgtxI9HiyCZo5z%2B%2FvjttQipprxMRV2YPjZ8oY88t%2B5z4YvNROqcPPxy7cZIlr0xtFI%2FVkH7iwn%2F2sMQJvo9Y2H9U2U2xsIm0O3UHVcg4H6qDfF%2FtfjSpuFq6agOwjj7BCICjy%2FEkAMrqIcFYohmQqW84eLrs%2F73mBg3ga%2BlrR4e0knPXw%3D%3D"
                             alt="aerial view of modern logistics warehouse facility with multiple loading docks, large industrial building, strategic location near highways, professional architecture photography">
                         <div
-                            class="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white px-3 py-1 text-sm rounded">
+                            class="absolute bottom-4 right-4 bg-gray-850 bg-opacity-80 text-white px-3 py-1 text-sm rounded">
                             Gallery
                         </div>
                     </div>
@@ -251,8 +261,21 @@
                             <i class="fa-solid fa-external-link ml-2"></i>
                         </button>
                     </div>
-                    <div class="overflow-x-auto">
-                        <div class="flex gap-6 pb-4" style="width: max-content;">
+                    <div class="relative">
+                        <!-- Left scroll arrow -->
+                        <button id="galleryScrollLeft" 
+                            class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fa-solid fa-chevron-left text-lg"></i>
+                        </button>
+                        
+                        <!-- Right scroll arrow -->
+                        <button id="galleryScrollRight" 
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fa-solid fa-chevron-right text-lg"></i>
+                        </button>
+                        
+                        <div id="galleryContainer" class="overflow-x-auto scrollbar-hide" style="scroll-behavior: smooth;">
+                            <div class="flex gap-6 pb-4" style="width: max-content;">
                             <div class="relative group cursor-pointer flex-shrink-0 w-48">
                                 <img class="aspect-video w-full object-cover rounded-lg"
                                     src="images/gallery/photo-1.jpg"
@@ -356,6 +379,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 <div id="interactive-site-plan" class="bg-white border border-soft-gray p-8">
                     <div class="flex items-center justify-between mb-8">
@@ -415,15 +439,15 @@
                                         position: location,
                                         map: map,
                                         icon: customIcon,
-                                        title: "Premier Logistics Center - 1365 E Hightower Trail, Social Circle, GA 30025",
+                                        title: "PNK Loggins Park 100 - 1365 E Hightower Trail, Social Circle, GA 30025",
                                         animation: google.maps.Animation.DROP
                                     });
 
                                     const infoWindow = new google.maps.InfoWindow({
                                         content: `
                                             <div style="padding: 12px; font-family: Inter, sans-serif;">
-                                                <div style="margin-bottom: 8px; font-weight: bold; color: #2D2D2D; font-size: 14px;">Premier Logistics Center</div>
-                                                <div style="margin-bottom: 4px; color: #666; font-size: 12px;">2.5M sq ft • Available Now</div>
+                                                <div style="margin-bottom: 8px; font-weight: bold; color: #2D2D2D; font-size: 14px;">PNK Loggins Park 100</div>
+                                                <div style="margin-bottom: 4px; color: #666; font-size: 12px;">1,013,902 SF • Available Now</div>
                                                 <div style="padding: 8px 0; border-top: 1px solid #eee; margin-top: 8px;">
                                                     <div style="color: #666; font-size: 11px;">1365 E Hightower Trail</div>
                                                     <div style="color: #666; font-size: 11px;">Social Circle, GA 30025</div>
@@ -450,14 +474,14 @@
                     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-gray-50 p-6 border border-soft-gray">
                             <h3 class="text-gray-850 mb-4 flex items-center montserrat-bold">
-                                <i class="fa-solid fa-location-dot text-orange-600 mr-3 text-xl"></i>
+                                <i class="fa-solid fa-location-dot text-gray-700 mr-3 text-xl"></i>
                                 Exact Address
                             </h3>
                             <p class="text-gray-700 mb-2 font-medium">1365 E Hightower Trail</p>
                             <p class="text-gray-700 mb-2 font-medium">Social Circle, GA</p>
                             <p class="text-gray-700 mb-4 font-medium">30025</p>
                             <button
-                                class="text-gray-850 hover:text-orange-600 flex items-center font-semibold transition-colors">
+                                class="text-gray-850 hover:text-gray-800 flex items-center font-semibold transition-colors">
                                 <i class="fa-solid fa-directions mr-2"></i>
                                 Get Directions
                             </button>
@@ -465,7 +489,7 @@
 
                         <div class="bg-gray-50 p-6 border border-soft-gray">
                             <h3 class="text-gray-850 mb-4 flex items-center montserrat-bold">
-                                <i class="fa-solid fa-clock text-orange-600 mr-3 text-xl"></i>
+                                <i class="fa-solid fa-clock text-gray-700 mr-3 text-xl"></i>
                                 Travel Times
                             </h3>
                             <div class="space-y-3">
@@ -495,66 +519,140 @@
 
             <div id="sidebar" class="lg:col-span-1 space-y-8">
 
-                <div id="property-manager" class="bg-white border border-soft-gray p-8">
-                    <h3 class="text-xl text-gray-850 mb-6 montserrat-bold">Property Manager</h3>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
-                            alt="Property Manager" class="w-16 h-16">
-                        <div>
-                            <div class="text-gray-850 font-bold text-lg">Sarah Mitchell</div>
-                            <div class="text-gray-600">Senior Leasing Director</div>
+                <!-- Contact Cards -->
+                <div class="space-y-6">
+                    <!-- Vlad Ryabov -->
+                    <div class="bg-white border border-soft-gray p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">VR</span>
+                            </div>
+                            <div>
+                                <div class="text-gray-850 font-bold text-lg">Vlad Ryabov</div>
+                                <div class="text-gray-600 text-sm">Property Manager</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-gray-700 text-sm"></i>
+                                <a href="mailto:v.ryabov@pnk.group" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">v.ryabov@pnk.group</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-gray-700 text-sm"></i>
+                                <a href="tel:404.917.6871" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">404.917.6871</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <i class="fa-solid fa-phone text-orange-600 text-lg"></i>
-                            <span class="text-gray-700 font-medium">(732) 555-0123</span>
+
+                    <!-- Arin Rauf -->
+                    <div class="bg-white border border-soft-gray p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">AR</span>
+                            </div>
+                            <div>
+                                <div class="text-gray-850 font-bold text-lg">Arin Rauf</div>
+                                <div class="text-gray-600 text-sm">Property Manager</div>
+                            </div>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <i class="fa-solid fa-envelope text-orange-600 text-lg"></i>
-                            <span class="text-gray-700 font-medium">s.mitchell@logisticsshowcase.com</span>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-gray-700 text-sm"></i>
+                                <a href="mailto:a.rauf@pnk.group" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">a.rauf@pnk.group</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-gray-700 text-sm"></i>
+                                <a href="tel:332.248.6630" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">332.248.6630</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mark Stiles -->
+                    <div class="bg-white border border-soft-gray p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">MS</span>
+                            </div>
+                            <div>
+                                <div class="text-gray-850 font-bold text-lg">Mark Stiles</div>
+                                <div class="text-gray-600 text-sm">Property Manager</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-orange-600 text-sm"></i>
+                                <a href="mailto:ms@pnk.group" class="text-gray-700 hover:text-orange-600 transition-colors text-sm">ms@pnk.group</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-orange-600 text-sm"></i>
+                                <a href="tel:404.457.8473" class="text-gray-700 hover:text-orange-600 transition-colors text-sm">404.457.8473</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div id="contact-form" class="bg-white border border-soft-gray p-8 sticky top-24">
                     <h3 class="text-2xl text-gray-850 mb-6 montserrat-bold">Get More Information</h3>
-                    <form class="space-y-5">
-                        <div>
-                            <label class="block text-gray-850 mb-2 font-semibold">Full Name *</label>
-                            <input type="text"
-                                class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent"
-                                placeholder="Enter your full name">
-                        </div>
-                        <div>
-                            <label class="block text-gray-850 mb-2 font-semibold">Company</label>
-                            <input type="text"
-                                class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent"
-                                placeholder="Your company name">
-                        </div>
-                        <div>
-                            <label class="block text-gray-850 mb-2 font-semibold">Email Address *</label>
-                            <input type="email"
-                                class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent"
-                                placeholder="your.email@company.com">
-                        </div>
-                        <div>
-                            <label class="block text-gray-850 mb-2 font-semibold">Phone Number</label>
-                            <input type="tel"
-                                class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent"
-                                placeholder="(555) 123-4567">
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <input type="checkbox"
-                                class="mt-1 border-2 border-soft-gray text-gray-850 focus:ring-gray-850">
-                            <label class="text-sm text-gray-600">I agree to receive communications about this property
-                                and related opportunities.</label>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-orange-600 text-white py-4 px-6 hover:bg-orange-700 transition-colors font-bold montserrat-bold">
-                            Send Inquiry
+                    
+                    <!-- Initial Button State -->
+                    <div id="request-info-button" class="text-center">
+                        <button onclick="showContactForm()" 
+                            class="w-full bg-orange-600 text-white py-4 px-6 hover:bg-orange-700 transition-colors font-bold montserrat-bold rounded">
+                            Request Information
                         </button>
-                    </form>
+                        <p class="text-sm text-gray-600 mt-3">Get detailed information about this property including pricing, availability, and specifications.</p>
+                    </div>
+                    
+                    <!-- Contact Form (Initially Hidden) -->
+                    <div id="contact-form-container" class="hidden">
+                        <form class="space-y-5">
+                            <div>
+                                <label class="block text-gray-850 mb-2 font-semibold">Full Name *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
+                                    placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-850 mb-2 font-semibold">Company</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
+                                    placeholder="Your company name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-850 mb-2 font-semibold">Email Address *</label>
+                                <input type="email" required
+                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
+                                    placeholder="your.email@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-850 mb-2 font-semibold">Phone Number</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
+                                    placeholder="(555) 123-4567">
+                            </div>
+                            <div>
+                                <label class="block text-gray-850 mb-2 font-semibold">Message</label>
+                                <textarea rows="3"
+                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
+                                    placeholder="Tell us about your requirements..."></textarea>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="consent-checkbox"
+                                    class="mt-1 border-2 border-soft-gray text-gray-850 focus:ring-gray-850">
+                                <label for="consent-checkbox" class="text-sm text-gray-600">I agree to receive communications about this property and related opportunities.</label>
+                            </div>
+                            <div class="flex gap-3">
+                                <button type="button" onclick="hideContactForm()"
+                                    class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 hover:bg-gray-300 transition-colors font-semibold rounded">
+                                    Cancel
+                                </button>
+                                <button type="submit"
+                                    class="flex-1 bg-orange-600 text-white py-3 px-4 hover:bg-orange-700 transition-colors font-bold montserrat-bold rounded">
+                                    Send Inquiry
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -742,9 +840,71 @@
             }
         }
 
+        // Gallery Scroll Functionality
+        class GalleryScroll {
+            constructor() {
+                this.container = document.getElementById('galleryContainer');
+                this.leftBtn = document.getElementById('galleryScrollLeft');
+                this.rightBtn = document.getElementById('galleryScrollRight');
+                this.scrollAmount = 300; // pixels to scroll per click
+                
+                this.init();
+            }
+            
+            init() {
+                if (!this.container || !this.leftBtn || !this.rightBtn) return;
+                
+                // Add event listeners
+                this.leftBtn.addEventListener('click', () => this.scrollLeft());
+                this.rightBtn.addEventListener('click', () => this.scrollRight());
+                
+                // Update button states on scroll
+                this.container.addEventListener('scroll', () => this.updateButtonStates());
+                
+                // Initial button state update
+                this.updateButtonStates();
+            }
+            
+            scrollLeft() {
+                this.container.scrollBy({
+                    left: -this.scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            scrollRight() {
+                this.container.scrollBy({
+                    left: this.scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            updateButtonStates() {
+                const { scrollLeft, scrollWidth, clientWidth } = this.container;
+                
+                // Disable left button if at the start
+                this.leftBtn.disabled = scrollLeft <= 0;
+                
+                // Disable right button if at the end
+                this.rightBtn.disabled = scrollLeft >= scrollWidth - clientWidth - 1;
+            }
+        }
+
+        // Contact Form Toggle Functions
+        function showContactForm() {
+            document.getElementById('request-info-button').classList.add('hidden');
+            document.getElementById('contact-form-container').classList.remove('hidden');
+        }
+        
+        function hideContactForm() {
+            document.getElementById('contact-form-container').classList.add('hidden');
+            document.getElementById('request-info-button').classList.remove('hidden');
+        }
+
         // Initialize modal when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new PhotoModal();
+            new GalleryScroll();
         });
     </script>
 

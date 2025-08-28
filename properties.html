@@ -1,145 +1,746 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PNK Properties - Industrial & Logistics Facilities</title>
-  
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    window.FontAwesomeConfig = {
-      autoReplaceSvg: 'nest',
-    };
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  
+  <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
   <style>
-    * { font-family: 'Inter', sans-serif; }
-    ::-webkit-scrollbar { display: none; }
-    html, body {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .montserrat-bold {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+    }
+
+    .open-sans {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+  <script>tailwind.config = {
+      "theme": {
+        "extend": {
+          "colors": {
+            "gray-850": "#2D2D2D",
+            "gray-750": "#3A3A3A",
+            "soft-gray": "#D3D3D3"
+          },
+          "fontFamily": {
+            "sans": [
+              "Inter",
+              "sans-serif"
+            ]
+          }
+        }
+      }
+    };</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    /* Preserve Font Awesome icons */
+    .fa,
+    .fas,
+    .far,
+    .fal,
+    .fab {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+    }
+  </style>
+  <style>
+    .highlighted-section {
+      outline: 2px solid #3F20FB;
+      background-color: rgba(63, 32, 251, 0.1);
+    }
+
+    .edit-button {
+      position: absolute;
+      z-index: 1000;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html,
+    body {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
   </style>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
 </head>
 
-<body class="bg-gray-50">
-  <!-- Header -->
-  <header class="bg-white border-b border-gray-200">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-8">
-          <h1 class="text-2xl font-bold text-gray-900">PNK</h1>
-          <nav class="hidden md:flex space-x-6">
-            <a href="#" class="text-gray-700 hover:text-gray-900">Properties</a>
-            <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
-            <a href="#" class="text-gray-700 hover:text-gray-900">Services</a>
-            <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
-          </nav>
-        </div>
-        <button class="bg-gray-900 text-white px-4 py-2 hover:bg-gray-800">
-          <i class="fa-solid fa-user mr-2"></i>
-          Login
-        </button>
-      </div>
-    </div>
-  </header>
+<body class="bg-gray-50 open-sans">
 
   <!-- Hero Section -->
-  <section class="bg-gray-800 text-white py-16">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4">Industrial & Logistics Properties</h2>
-      <p class="text-xl text-gray-300">Premium facilities across strategic locations</p>
-    </div>
-  </section>
-
-  <!-- Filters Section -->
-  <section class="bg-white border-b border-gray-200 sticky top-0 z-10">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex flex-wrap gap-4 items-center">
-        <div class="flex-1 min-w-[200px]">
-          <label class="block text-sm text-gray-600 mb-1">Search</label>
-          <input type="text" id="search-input" placeholder="Search by name or location..." 
-            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-500">
-        </div>
-        
-        <div class="min-w-[150px]">
-          <label class="block text-sm text-gray-600 mb-1">State</label>
-          <select id="state-filter" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-500">
-            <option value="">All States</option>
-          </select>
-        </div>
-        
-        <div class="min-w-[150px]">
-          <label class="block text-sm text-gray-600 mb-1">Status</label>
-          <select id="status-filter" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-500">
-            <option value="">All Status</option>
-            <option value="built">Built</option>
-            <option value="under-construction">Under Construction</option>
-            <option value="planned">Planned</option>
-          </select>
-        </div>
-        
-        <div class="min-w-[150px]">
-          <label class="block text-sm text-gray-600 mb-1">Min Size (SF)</label>
-          <input type="number" id="size-filter" placeholder="Any size"
-            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-500">
-        </div>
-        
-        <div class="flex items-end">
-          <button id="reset-filters" class="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-50">
-            <i class="fa-solid fa-rotate-right mr-2"></i>
-            Reset
-          </button>
-        </div>
+  <div id="hero-section" class="relative min-h-[300px] bg-cover bg-center bg-no-repeat py-12"
+    style="background-image: url('https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="container mx-auto px-6 relative z-10 flex items-center min-h-[300px]">
+      <div class="text-center w-full">
+        <h1 class="text-5xl text-white mb-4 montserrat-bold">Available Properties</h1>
+        <p class="text-gray-200 text-lg">Discover premium industrial and logistics facilities</p>
       </div>
-      
-      <div class="mt-4 flex items-center justify-between">
-        <div id="results-count" class="text-sm text-gray-600">
-          Loading properties...
-        </div>
-        <div class="flex items-center space-x-4">
-          <label class="text-sm text-gray-600">Sort by:</label>
-          <select id="sort-select" class="px-3 py-1 border border-gray-300 rounded text-sm">
-            <option value="name">Name</option>
-            <option value="size">Size</option>
-            <option value="year">Year Built</option>
-            <option value="status">Status</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Properties Grid -->
-  <section class="py-8">
-    <div class="container mx-auto px-6">
-      <div id="properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Properties will be dynamically loaded here -->
-      </div>
-      
-      <!-- No results message -->
-      <div id="no-results" class="hidden text-center py-12">
-        <i class="fa-solid fa-building text-gray-400 text-4xl mb-4"></i>
-        <p class="text-gray-600 text-lg">No properties found matching your criteria</p>
-        <button class="mt-4 text-blue-600 hover:text-blue-700" onclick="resetFilters()">
-          Clear filters
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Loading indicator -->
-  <div id="loading" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white p-4 rounded-lg">
-      <i class="fa-solid fa-spinner fa-spin text-2xl text-gray-600"></i>
     </div>
   </div>
 
-  <script src="js/properties.js"></script>
+  <!-- Filter Section -->
+  <div id="filter-section" class="sticky top-0 bg-white border-b border-soft-gray shadow-md z-40">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-filter text-gray-600"></i>
+        </div>
+        <select class="border border-soft-gray px-4 py-2 bg-white text-gray-700 rounded">
+          <option>All States</option>
+          <option>California</option>
+          <option>Texas</option>
+          <option>Florida</option>
+          <option>Illinois</option>
+          <option>Georgia</option>
+          <option>New Jersey</option>
+          <option>Pennsylvania</option>
+          <option>Ohio</option>
+          <option>North Carolina</option>
+          <option>Arizona</option>
+        </select>
+        <select class="border border-soft-gray px-4 py-2 bg-white text-gray-700 rounded">
+          <option>All Sizes</option>
+          <option>50K - 200K SF</option>
+          <option>200K - 500K SF</option>
+          <option>500K - 1M SF</option>
+          <option>1M - 2M SF</option>
+          <option>2M+ SF</option>
+        </select>
+        <select class="border border-soft-gray px-4 py-2 bg-white text-gray-700 rounded">
+          <option>All Status</option>
+          <option>Available Now</option>
+          <option>Under Construction</option>
+          <option>Planned</option>
+        </select>
+        <button class="text-gray-600 hover:text-gray-850 transition-colors">
+          Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Grid Section -->
+  <div id="property-grid-section" class="py-12 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Lambert Park A -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+              alt="Lambert Park A - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Lambert Park A</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1305 Hwy 42 South, McDonough, GA 30252
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">1,219,826 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lambert Park B -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+              alt="Lambert Park B - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Lambert Park B</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1305 Hwy 42 South, McDonough, GA 30252
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">1,104,320 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loggins Park 100 -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png"
+              alt="Loggins Park 100 - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Loggins Park 100</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1365 E Hightower Trail, Social Circle, GA 30025
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">1,013,902 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- High Point -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05065/images/1749355594642-High-Point-planImage.jpg"
+              alt="High Point - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">High Point</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1101 Gallimore Dairy Rd., High Point, NC 27265
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">1,050,560 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Griffin 2 -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg"
+              alt="Griffin 2 - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Griffin 2</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              35 S McDonough Rd, Griffin, GA
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">968,369 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loggins Park 200 -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979093/images/1753735614134-Loggins_Loggins%20Bldg%20200.jpg"
+              alt="Loggins Park 200 - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Under
+                Construction</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Loggins Park 200</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1365 E Hightower Trail, Social Circle, GA 30025
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">772,071 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loggins Park 300 -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979094/images/1753735643060-Loggins_Loggins%20Bldg%20300.jpg"
+              alt="Loggins Park 300 - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Planned</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Loggins Park 300</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1365 E Hightower Trail, Social Circle, GA 30025
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">544,626 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lambert Park C -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+              alt="Lambert Park C - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Lambert Park C</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1305 Hwy 42 South, McDonough, GA 30252
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">425,660 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lambert Park D -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05035/images/1749355571603-Lambert-D-planImage.png"
+              alt="Lambert Park D - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Lambert Park D</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1305 Hwy 42 South, McDonough, GA 30252
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">367,165 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lambert Park E -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05041/images/1749355578222-Lambert-E-planImage.png"
+              alt="Lambert Park E - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Lambert Park E</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              1305 Hwy 42 South, McDonough, GA 30252
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">211,399 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Griffin 1 -->
+        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+          <div class="relative overflow-hidden">
+            <img class="h-56 w-full object-cover"
+              src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979097/images/1755878216841-Griffin_Overview_v02.png"
+              alt="Griffin 1 - Industrial facility rendering"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+            <div class="absolute top-4 left-4">
+              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl text-gray-850 montserrat-bold">Griffin 1</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              <i class="fa-solid fa-location-dot mr-1"></i>
+              35 S McDonough Rd, Griffin, GA
+            </p>
+            <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+              <div>
+                <span class="text-gray-600">Size:</span>
+                <span class="text-gray-850 ml-1 font-semibold">306,159 SF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-soft-gray">
+              <a href="design.html"
+                class="bg-gray-850 text-white px-4 py-2 text-sm hover:bg-gray-700 transition-colors font-semibold inline-block text-center">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Map Section -->
+  <div id="interactive-map-section" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl text-gray-850 mb-4 montserrat-bold">Property Locations</h2>
+      </div>
+
+      <div class="relative bg-gray-100 rounded-2xl h-[600px] overflow-hidden shadow-lg">
+        <!-- Google Maps -->
+        <div id="google-map" class="absolute inset-0 w-full h-full rounded-2xl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Maps JavaScript -->
+  <script>
+    function initMap() {
+      // Center the map on Georgia (between all properties)
+      const center = { lat: 33.5, lng: -83.5 };
+
+      const map = new google.maps.Map(document.getElementById("google-map"), {
+        zoom: 6,
+        center: center,
+        mapTypeId: 'roadmap',
+        styles: [
+          {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [{ visibility: "off" }]
+          }
+        ]
+      });
+
+      // Property locations with details
+      const properties = [
+        {
+          name: "Lambert Park A",
+          address: "1305 Hwy 42 South, McDonough, GA 30252",
+          size: "1,219,826 SF",
+          status: "Available Now",
+          lat: 33.4734,
+          lng: -84.1557
+        },
+        {
+          name: "Lambert Park B",
+          address: "1305 Hwy 42 South, McDonough, GA 30252",
+          size: "1,104,320 SF",
+          status: "Available Now",
+          lat: 33.4734,
+          lng: -84.1557
+        },
+        {
+          name: "Lambert Park C",
+          address: "1305 Hwy 42 South, McDonough, GA 30252",
+          size: "425,660 SF",
+          status: "Available Now",
+          lat: 33.4734,
+          lng: -84.1557
+        },
+        {
+          name: "Lambert Park D",
+          address: "1305 Hwy 42 South, McDonough, GA 30252",
+          size: "367,165 SF",
+          status: "Available Now",
+          lat: 33.4734,
+          lng: -84.1557
+        },
+        {
+          name: "Lambert Park E",
+          address: "1305 Hwy 42 South, McDonough, GA 30252",
+          size: "211,399 SF",
+          status: "Available Now",
+          lat: 33.4734,
+          lng: -84.1557
+        },
+        {
+          name: "Loggins Park 100",
+          address: "1365 E Hightower Trail, Social Circle, GA 30025",
+          size: "1,013,902 SF",
+          status: "Available Now",
+          lat: 33.6497,
+          lng: -83.6877
+        },
+        {
+          name: "Loggins Park 200",
+          address: "1365 E Hightower Trail, Social Circle, GA 30025",
+          size: "772,071 SF",
+          status: "Under Construction",
+          lat: 33.6497,
+          lng: -83.6877
+        },
+        {
+          name: "Loggins Park 300",
+          address: "1365 E Hightower Trail, Social Circle, GA 30025",
+          size: "544,626 SF",
+          status: "Planned",
+          lat: 33.6497,
+          lng: -83.6877
+        },
+        {
+          name: "High Point",
+          address: "1101 Gallimore Dairy Rd., High Point, NC 27265",
+          size: "1,050,560 SF",
+          status: "Available Now",
+          lat: 35.9557,
+          lng: -80.0053
+        },
+        {
+          name: "Griffin 1",
+          address: "35 S McDonough Rd, Griffin, GA",
+          size: "306,159 SF",
+          status: "Available Now",
+          lat: 33.2468,
+          lng: -84.2641
+        },
+        {
+          name: "Griffin 2",
+          address: "35 S McDonough Rd, Griffin, GA",
+          size: "968,369 SF",
+          status: "Available Now",
+          lat: 33.2468,
+          lng: -84.2641
+        }
+      ];
+
+      // Create markers for each property
+      properties.forEach((property, index) => {
+        // Adjust coordinates slightly for properties at same location to avoid overlap
+        let adjustedLat = property.lat;
+        let adjustedLng = property.lng;
+
+        // For Lambert Park properties (same address), spread them slightly
+        if (property.address.includes("1305 Hwy 42 South")) {
+          const offset = (index % 5) * 0.002; // Small offset for each Lambert property
+          adjustedLat += offset;
+          adjustedLng += offset;
+        }
+
+        // For Loggins Park properties (same address), spread them slightly  
+        if (property.address.includes("1365 E Hightower Trail")) {
+          const logginIndex = properties.filter(p => p.address.includes("1365 E Hightower Trail")).indexOf(property);
+          const offset = logginIndex * 0.002;
+          adjustedLat += offset;
+          adjustedLng += offset;
+        }
+
+        // For Griffin properties (same address), spread them slightly
+        if (property.address.includes("35 S McDonough Rd")) {
+          const griffinIndex = properties.filter(p => p.address.includes("35 S McDonough Rd")).indexOf(property);
+          const offset = griffinIndex * 0.002;
+          adjustedLat += offset;
+          adjustedLng += offset;
+        }
+
+        // Custom marker color based on status
+        let markerColor = '#10B981'; // Green for Available
+        if (property.status === 'Under Construction') markerColor = '#F59E0B'; // Yellow
+        if (property.status === 'Planned') markerColor = '#3B82F6'; // Blue
+
+        const marker = new google.maps.Marker({
+          position: { lat: adjustedLat, lng: adjustedLng },
+          map: map,
+          title: property.name,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 12,
+            fillColor: markerColor,
+            fillOpacity: 1,
+            strokeColor: '#FFFFFF',
+            strokeWeight: 3
+          }
+        });
+
+        // Info window content
+        const infoWindow = new google.maps.InfoWindow({
+          content: `
+            <div style="padding: 12px; font-family: Inter, sans-serif; max-width: 250px;">
+              <div style="margin-bottom: 8px; font-weight: bold; color: #2D2D2D; font-size: 16px;">${property.name}</div>
+              <div style="margin-bottom: 8px; color: #6B7280; font-size: 14px;">${property.address}</div>
+              <div style="margin-bottom: 4px; color: #374151; font-size: 14px;"><strong>Size:</strong> ${property.size}</div>
+              <div style="padding: 4px 8px; background-color: ${property.status === 'Available Now' ? '#D1FAE5' : property.status === 'Under Construction' ? '#FEF3C7' : '#DBEAFE'}; 
+                          color: ${property.status === 'Available Now' ? '#065F46' : property.status === 'Under Construction' ? '#92400E' : '#1E40AF'}; 
+                          border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 8px;">
+                ${property.status}
+              </div>
+            </div>
+          `
+        });
+
+        // Add click listener to marker
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
+      });
+
+      // Add legend
+      const legend = document.createElement('div');
+      legend.innerHTML = `
+        <div style="background: white; padding: 12px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: Inter, sans-serif;">
+          <div style="font-weight: bold; margin-bottom: 8px; color: #2D2D2D;">Property Status</div>
+          <div style="display: flex; align-items: center; margin-bottom: 4px;">
+            <div style="width: 12px; height: 12px; background-color: #10B981; border-radius: 50%; margin-right: 8px; border: 2px solid white;"></div>
+            <span style="font-size: 12px; color: #374151;">Available Now</span>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 4px;">
+            <div style="width: 12px; height: 12px; background-color: #F59E0B; border-radius: 50%; margin-right: 8px; border: 2px solid white;"></div>
+            <span style="font-size: 12px; color: #374151;">Under Construction</span>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div style="width: 12px; height: 12px; background-color: #3B82F6; border-radius: 50%; margin-right: 8px; border: 2px solid white;"></div>
+            <span style="font-size: 12px; color: #374151;">Planned</span>
+          </div>
+        </div>
+      `;
+
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
+    }
+  </script>
+
+  <!-- Load Google Maps API -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeDm5qMuABOhJ62aj4lbH2Aqkx74z-BxY&callback=initMap"></script>
+
 </body>
+
 </html>

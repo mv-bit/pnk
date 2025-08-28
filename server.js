@@ -9,7 +9,7 @@ app.use(express.static('.'));
 
 // Route to serve the main page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'design.html'));
+    res.sendFile(path.join(__dirname, 'properties.html'));
 });
 
 // Start the server
