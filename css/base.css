@@ -1,0 +1,192 @@
+/* ================================================
+   Base Styles - Typography and Resets
+   ================================================ */
+
+/* Font Imports */
+/* D-DIN Pro font family - exact match from pnk.group */
+/* Note: Font files should be provided from pnk.group WordPress uploads or licensed source */
+
+/* Base Typography - Exact pnk.group font stack */
+body {
+  font-family: 'd-din-proregular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, serif !important;
+  font-weight: 400;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+}
+
+/* Font Classes - D-DIN Pro variants */
+.font-regular {
+  font-family: 'd-din-proregular', serif;
+  font-weight: 400;
+}
+
+.font-medium {
+  font-family: 'd-din-promedium', serif;
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-family: 'd-din-prosemibold', serif;
+  font-weight: 600;
+}
+
+.font-bold {
+  font-family: 'd-din-probold', serif;
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-family: 'd-din-proextrabold', serif;
+  font-weight: 800;
+}
+
+/* Heading styles - matching pnk.group */
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: 'd-din-probold', serif;
+  font-weight: 700;
+}
+
+/* Body text */
+.font-body {
+  font-family: 'd-din-proregular', serif;
+  font-weight: 400;
+}
+
+/* Legacy font classes - mapped to D-DIN Pro */
+.montserrat-bold {
+  font-family: 'd-din-probold', serif;
+  font-weight: 700;
+}
+
+.open-sans {
+  font-family: 'd-din-proregular', serif;
+}
+
+/* Preserve Font Awesome Icons */
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+
+/* Scrollbar Hiding */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text Color Utilities */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+/* Background Utilities */
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.bg-section {
+  background-color: var(--color-bg-section);
+}
+
+.bg-hero {
+  background-color: var(--color-bg-hero);
+}
+
+.bg-white {
+  background-color: var(--color-bg-white);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-secondary-dark {
+  background-color: var(--color-secondary-dark);
+}
+
+/* Border Utilities */
+.border-soft {
+  border-color: var(--color-border);
+}
+
+/* Link Styles */
+a {
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-hover-dark);
+}
+
+/* Button Base Styles */
+button {
+  transition: all var(--transition-normal);
+}
+
+/* Smooth Transitions for Interactive Elements */
+.transition-smooth {
+  transition: all var(--transition-normal);
+}
+
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+.shadow-2xl {
+  box-shadow: var(--shadow-2xl);
+}

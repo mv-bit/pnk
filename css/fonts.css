@@ -1,0 +1,60 @@
+/* ================================================
+   D-DIN Pro Font Declarations
+   Actual URLs from pnk.group website
+   ================================================ */
+
+/* D-DIN Pro Regular - 400 */
+@font-face {
+    font-family: 'd-din-proregular';
+    src: url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-400-regular-webfont.woff2') format('woff2'),
+         url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-400-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* D-DIN Pro Medium - 500 */
+@font-face {
+    font-family: 'd-din-promedium';
+    src: url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-500-medium-webfont.woff2') format('woff2'),
+         url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-500-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* D-DIN Pro SemiBold - 600 */
+@font-face {
+    font-family: 'd-din-prosemibold';
+    src: url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-600-semibold-webfont.woff2') format('woff2'),
+         url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-600-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* D-DIN Pro Bold - 700 */
+@font-face {
+    font-family: 'd-din-probold';
+    src: url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-700-bold-webfont.woff2') format('woff2'),
+         url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-700-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* D-DIN Pro ExtraBold - 800 */
+@font-face {
+    font-family: 'd-din-proextrabold';
+    src: url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-800-extrabold-webfont.woff2') format('woff2'),
+         url('https://pnk.group/wp-content/uploads/2024/03/d-din-pro-800-extrabold-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 
+   These fonts are loaded directly from pnk.group WordPress uploads.
+   When deploying to pnk.group, these URLs will work correctly since
+   they're hosted on the same domain.
+*/

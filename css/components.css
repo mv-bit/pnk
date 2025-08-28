@@ -1,0 +1,207 @@
+/* ================================================
+   Component Styles - Reusable UI Components
+   ================================================ */
+
+/* Highlighted Sections */
+.highlighted-section {
+  outline: 2px solid var(--color-highlight);
+  background-color: var(--color-highlight-bg);
+}
+
+/* Edit Button */
+.edit-button {
+  position: absolute;
+  z-index: var(--z-tooltip);
+}
+
+/* Primary Buttons */
+.btn-primary {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 600;
+  transition: background-color var(--transition-normal);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hover-dark);
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+  border: 1px solid var(--color-primary-dark);
+  color: var(--color-primary-dark);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-white);
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Property Status Badges */
+.badge-available {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.badge-construction {
+  background-color: var(--color-status-construction);
+  color: var(--color-text-white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.badge-planned {
+  background-color: var(--color-status-planned);
+  color: var(--color-text-white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+/* Form Controls */
+.form-input {
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.1);
+}
+
+.form-label {
+  display: block;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Select Dropdowns */
+.select-dropdown {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  background-color: var(--color-bg-white);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.select-dropdown:hover {
+  border-color: var(--color-primary-dark);
+}
+
+/* Contact Cards */
+.contact-card {
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  transition: box-shadow var(--transition-normal);
+}
+
+.contact-avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+/* Section Headers */
+.section-header {
+  font-size: 1.875rem;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-lg);
+  font-family: 'd-din-probold', serif;
+  font-weight: 700;
+}
+
+/* Specification Tables */
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-bg-section);
+}
+
+.spec-label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.spec-value {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+/* Navigation Breadcrumbs */
+.breadcrumb {
+  background-color: var(--color-bg-section);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-sm) 0;
+}
+
+.breadcrumb-link {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Overlays */
+.overlay-dark {
+  background-color: var(--color-overlay-dark);
+}
+
+.overlay-light {
+  background-color: var(--color-overlay-light);
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-bg-section) 25%, var(--color-bg-hero) 50%, var(--color-bg-section) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

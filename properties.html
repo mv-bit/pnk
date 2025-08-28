@@ -7,77 +7,36 @@
   <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
     referrerpolicy="no-referrer"></script>
-
-  <style>
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    .montserrat-bold {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-    }
-
-    .open-sans {
-      font-family: 'Open Sans', sans-serif;
-    }
-  </style>
+  
+  <!-- Centralized CSS System -->
+  <link rel="stylesheet" href="css/main.css">
   <script>tailwind.config = {
       "theme": {
         "extend": {
           "colors": {
-            "gray-850": "#2D2D2D",
-            "gray-750": "#3A3A3A",
+            "gray-850": "#54565a",
+            "gray-750": "#54565a",
             "soft-gray": "#D3D3D3"
           },
           "fontFamily": {
             "sans": [
-              "Inter",
-              "sans-serif"
+              "d-din-proregular",
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "serif"
+            ],
+            "heading": [
+              "d-din-probold",
+              "serif"
             ]
           }
         }
       }
     };</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif !important;
-    }
-
-    /* Preserve Font Awesome icons */
-    .fa,
-    .fas,
-    .far,
-    .fal,
-    .fab {
-      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
-    }
-  </style>
-  <style>
-    .highlighted-section {
-      outline: 2px solid #3F20FB;
-      background-color: rgba(63, 32, 251, 0.1);
-    }
-
-    .edit-button {
-      position: absolute;
-      z-index: 1000;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    html,
-    body {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
 </head>
 
 <body class="bg-gray-50 open-sans">
@@ -85,7 +44,7 @@
   <!-- Hero Section -->
   <div id="hero-section" class="relative min-h-[300px] bg-cover bg-center bg-no-repeat py-12"
     style="background-image: url('https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute inset-0 hero-overlay"></div>
     <div class="container mx-auto px-6 relative z-10 flex items-center min-h-[300px]">
       <div class="text-center w-full">
         <h1 class="text-5xl text-white mb-4 montserrat-bold">Available Properties</h1>
@@ -141,14 +100,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Lambert Park A -->
-        <div class="bg-white border border-soft-gray hover:shadow-lg transition-shadow group cursor-pointer">
+        <div class="property-card group cursor-pointer">
           <div class="relative overflow-hidden">
-            <img class="h-56 w-full object-cover"
+            <img class="property-image"
               src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
               alt="Lambert Park A - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -182,7 +141,7 @@
               alt="Lambert Park B - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -216,7 +175,7 @@
               alt="Loggins Park 100 - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -250,7 +209,7 @@
               alt="High Point - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -284,7 +243,7 @@
               alt="Griffin 2 - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -318,8 +277,7 @@
               alt="Loggins Park 200 - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Under
-                Construction</span>
+              <span class="badge-construction">Under Construction</span>
             </div>
           </div>
           <div class="p-6">
@@ -353,7 +311,7 @@
               alt="Loggins Park 300 - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Planned</span>
+              <span class="badge-planned">Planned</span>
             </div>
           </div>
           <div class="p-6">
@@ -387,7 +345,7 @@
               alt="Lambert Park C - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -421,7 +379,7 @@
               alt="Lambert Park D - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -455,7 +413,7 @@
               alt="Lambert Park E - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">
@@ -489,7 +447,7 @@
               alt="Griffin 1 - Industrial facility rendering"
               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjI1IiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTEyLjUiIGZpbGw9IiNGM0Y0RjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJvcGVydHkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPg=='">
             <div class="absolute top-4 left-4">
-              <span class="bg-gray-850 text-white px-3 py-1 text-sm font-semibold rounded">Available Now</span>
+              <span class="badge-available">Available Now</span>
             </div>
           </div>
           <div class="p-6">

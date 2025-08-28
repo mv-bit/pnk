@@ -1,0 +1,76 @@
+/* ================================================
+   CSS Variables - Central Color Control
+   ================================================ */
+
+:root {
+  /* Primary Brand Colors */
+  --color-primary-dark: #54565a;      /* gray-850 - Main dark color */
+  --color-secondary-dark: #54565a;    /* gray-750 - Secondary dark */
+  --color-border: #D3D3D3;            /* soft-gray - Borders and dividers */
+  
+  /* Highlight Colors */
+  --color-highlight: #3F20FB;         /* Edit/highlight color */
+  --color-highlight-bg: rgba(63, 32, 251, 0.1); /* Highlight background */
+  
+  /* Background Colors */
+  --color-bg-light: #F9FAFB;          /* gray-50 - Main page background */
+  --color-bg-section: #F3F4F6;        /* gray-100 - Section backgrounds */
+  --color-bg-hero: #E5E7EB;           /* gray-200 - Hero sections */
+  --color-bg-white: #FFFFFF;          /* White backgrounds */
+  
+  /* Text Colors */
+  --color-text-primary: #374151;      /* gray-700 - Primary text */
+  --color-text-secondary: #4B5563;    /* gray-600 - Secondary text */
+  --color-text-dark: #1F2937;         /* gray-800 - Dark text */
+  --color-text-light: #9CA3AF;        /* gray-400 - Light text */
+  --color-text-white: #FFFFFF;        /* White text */
+  
+  /* Interactive States */
+  --color-hover-dark: #1F2937;        /* Hover state for dark elements */
+  --color-hover-light: #F3F4F6;       /* Hover state for light elements */
+  
+  /* Overlays and Modals */
+  --color-overlay-dark: rgba(0, 0, 0, 0.5);
+  --color-overlay-light: rgba(0, 0, 0, 0.3);
+  --color-overlay-hover: rgba(0, 0, 0, 0.4);
+  
+  /* Status Colors (for property listings) */
+  --color-status-available: #10B981;   /* Green */
+  --color-status-construction: #F59E0B; /* Yellow */
+  --color-status-planned: #3B82F6;     /* Blue */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Z-index layers */
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-tooltip: 60;
+}

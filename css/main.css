@@ -1,0 +1,46 @@
+/* ================================================
+   Main CSS File - Imports all CSS modules
+   PNK Property Layout System
+   ================================================ */
+
+/* 
+   Import Order:
+   1. Fonts - D-DIN Pro font declarations
+   2. Variables - CSS custom properties and design tokens
+   3. Base - Resets, typography, and foundational styles
+   4. Components - Reusable UI component styles
+   5. Pages - Page-specific styles
+*/
+
+/* D-DIN Pro Font Declarations */
+@import url('fonts.css');
+
+/* CSS Variables and Design Tokens */
+@import url('variables.css');
+
+/* Base Styles and Typography */
+@import url('base.css');
+
+/* Reusable Components */
+@import url('components.css');
+
+/* Page-Specific Styles */
+@import url('pages.css');
+
+/* ================================================
+   Tailwind CSS Custom Configuration
+   This configuration is used by both HTML files
+   ================================================ */
+
+/* 
+   Note: Tailwind is loaded via CDN in the HTML files.
+   These custom values extend the default Tailwind config:
+   
+   colors:
+     gray-850: var(--color-primary-dark)
+     gray-750: var(--color-secondary-dark)
+     soft-gray: var(--color-border)
+   
+   The Tailwind config script in HTML files should reference
+   these CSS variables for consistency.
+*/
