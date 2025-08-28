@@ -53,27 +53,11 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Property Status Badges */
-.badge-available {
-  background-color: var(--color-primary-dark);
-  color: var(--color-text-white);
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-}
-
-.badge-construction {
-  background-color: var(--color-status-construction);
-  color: var(--color-text-white);
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-}
-
+/* Property Status Badges - All using same gray */
+.badge-available,
+.badge-construction,
 .badge-planned {
-  background-color: var(--color-status-planned);
+  background-color: var(--color-primary-dark);
   color: var(--color-text-white);
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
