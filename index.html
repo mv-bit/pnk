@@ -3,909 +3,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - PNK Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
-
-    <style>
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        .montserrat-bold {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-
-        .open-sans {
-            font-family: 'Open Sans', sans-serif;
-        }
-    </style>
+    
+    <!-- Centralized CSS System -->
+    <link rel="stylesheet" href="css/main.css">
     <script>tailwind.config = {
             "theme": {
                 "extend": {
                     "colors": {
-                        "gray-850": "#2D2D2D",
-                        "gray-750": "#3A3A3A",
+                        "gray-850": "#54565a",
+                        "gray-750": "#54565a",
                         "soft-gray": "#D3D3D3"
                     },
                     "fontFamily": {
                         "sans": [
-                            "Inter",
-                            "sans-serif"
+                            "d-din-proregular",
+                            "-apple-system",
+                            "BlinkMacSystemFont",
+                            "Segoe UI",
+                            "Roboto",
+                            "Helvetica Neue",
+                            "Arial",
+                            "serif"
+                        ],
+                        "heading": [
+                            "d-din-probold",
+                            "serif"
                         ]
                     }
                 }
             }
         };</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif !important;
-        }
-
-        /* Preserve Font Awesome icons */
-        .fa,
-        .fas,
-        .far,
-        .fal,
-        .fab {
-            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
-        }
-    </style>
-    <style>
-        .highlighted-section {
-            outline: 2px solid #3F20FB;
-            background-color: rgba(63, 32, 251, 0.1);
-        }
-
-        .edit-button {
-            position: absolute;
-            z-index: 1000;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        html,
-        body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Hide scrollbars for gallery */
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Photo Modal Styles */
-        #photoModal {
-            backdrop-filter: blur(5px);
-        }
-
-        #photoModal img {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Gallery hover effects */
-        .gallery-item:hover .gallery-overlay {
-            background-color: rgba(0, 0, 0, 0.4) !important;
-        }
-
-        .gallery-item:hover .gallery-text {
-            opacity: 1 !important;
-        }
-
-        /* Smooth transitions */
-        #photoModal * {
-            transition: all 0.3s ease;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-50 open-sans">
 
-
-    <div id="breadcrumb-section" class="bg-gray-100 border-b border-soft-gray">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <span class="text-gray-600 hover:text-gray-850 cursor-pointer transition-colors flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-2"></i>
-                    Back to Properties
-                </span>
-                <span class="text-gray-400">/</span>
-                <span class="text-gray-700 font-semibold">PNK Loggins Park 100</span>
-            </nav>
-        </div>
-    </div>
-
-    <div id="hero-section" class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="text-gray-800">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <span class="bg-green-100 text-green-800 px-3 py-1 text-sm font-semibold rounded">Available
-                            Now</span>
-                    </div>
-                    <h1 class="text-5xl text-gray-850 mb-4 montserrat-bold">PNK Loggins Park 100</h1>
-                    <p class="text-gray-600 mb-8 text-lg">1365 E Hightower Trail, Social Circle, GA 30025</p>
-
-                    <!-- Property Details Grid -->
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div>
-                            <div class="text-gray-600 text-sm mb-1">Market:</div>
-                            <div class="text-gray-850 font-semibold">Atlanta</div>
-                        </div>
-                        <div>
-                            <div class="text-gray-600 text-sm mb-1">Building Size:</div>
-                            <div class="text-gray-850 font-semibold">1,013,902 SF</div>
-                        </div>
-                        <div>
-                            <div class="text-gray-600 text-sm mb-1">Location:</div>
-                            <div class="text-gray-850 font-semibold">Social Circle, GA</div>
-                        </div>
-                        <div>
-                            <div class="text-gray-600 text-sm mb-1">Year Built:</div>
-                            <div class="text-gray-850 font-semibold">2024</div>
-                        </div>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="flex items-center space-x-4">
-                        <button
-                            class="bg-gray-850 text-white px-6 py-3 font-semibold flex items-center space-x-2 hover:bg-gray-700 transition-colors">
-                            <i class="fa-solid fa-download"></i>
-                            <span>Download Flyer</span>
-                        </button>
-                        <button
-                            class="border border-gray-850 text-gray-850 px-6 py-3 font-semibold hover:bg-gray-850 hover:text-white transition-colors">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Image -->
-                <div class="relative">
-                    <div class="relative">
-                        <img class="w-full h-80 object-cover rounded-lg"
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png?GoogleAccessId=rga-400%40rgaautomations.iam.gserviceaccount.com&Expires=1907035549&Signature=yOIHSZV53EFtIBSfZzOeDPumWYQn60HFkHk60F3yTUrRp%2F02w1Cviw4ggqlTzT6Rqe9%2BO19toCUHunH%2Fzeg1wqVWxD8MT%2BTBOPJ5l%2BAqvaJMHYKP2omc%2FNHjT%2FMsd2Vn1fv7SCcpTZY582Bk7aFf05eA%2B7BYptCNkKEZNBgtxI9HiyCZo5z%2B%2FvjttQipprxMRV2YPjZ8oY88t%2B5z4YvNROqcPPxy7cZIlr0xtFI%2FVkH7iwn%2F2sMQJvo9Y2H9U2U2xsIm0O3UHVcg4H6qDfF%2FtfjSpuFq6agOwjj7BCICjy%2FEkAMrqIcFYohmQqW84eLrs%2F73mBg3ga%2BlrR4e0knPXw%3D%3D"
-                            alt="aerial view of modern logistics warehouse facility with multiple loading docks, large industrial building, strategic location near highways, professional architecture photography">
-                        <div
-                            class="absolute bottom-4 right-4 bg-gray-850 bg-opacity-80 text-white px-3 py-1 text-sm rounded">
-                            Gallery
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <div id="hero-section" class="relative min-h-[300px] bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 flex items-center min-h-[300px]">
+            <div class="text-center w-full">
+                <h1 class="text-5xl text-white mb-4 montserrat-bold">Available Properties</h1>
+                <p class="text-gray-200 text-lg">Discover premium industrial and logistics facilities</p>
             </div>
         </div>
     </div>
 
-    <div id="main-content" class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div class="lg:col-span-2 space-y-10">
-                <div id="technical-specifications" class="bg-white border border-soft-gray p-8">
-                    <h2 class="text-3xl text-gray-850 mb-8 montserrat-bold">Technical Specifications</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div>
-                            <h3 class="text-gray-850 mb-6 border-b-2 border-gray-400 pb-3 montserrat-bold text-lg">
-                                Building Details</h3>
-                            <div class="space-y-4">
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Structural Frame:</span>
-                                    <span class="text-gray-850 font-semibold">3-layered robust reinforced
-                                        concrete</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Slab:</span>
-                                    <span class="text-gray-850 font-semibold">8" reinforced concrete</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Clear Height:</span>
-                                    <span class="text-gray-850 font-semibold">40 feet</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Column Spacing:</span>
-                                    <span class="text-gray-850 font-semibold">50' x 56' w/ 60' speed bay</span>
-                                </div>
-                                <div class="flex justify-between py-2">
-                                    <span class="text-gray-600 font-medium">Staging Bays:</span>
-                                    <span class="text-gray-850 font-semibold">620' deep</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-gray-850 mb-6 border-b-2 border-gray-400 pb-3 montserrat-bold text-lg">
-                                Loading &amp; Access</h3>
-                            <div class="space-y-4">
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Truck Court:</span>
-                                    <span class="text-gray-850 font-semibold">190' w/ concrete apron</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Drive-in Doors:</span>
-                                    <span class="text-gray-850 font-semibold">4 w/ concrete ramp</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Dock Doors:</span>
-                                    <span class="text-gray-850 font-semibold">140 fully equipped w/ dock levelers</span>
-                                </div>
-                                <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600 font-medium">Trailer Parking:</span>
-                                    <span class="text-gray-850 font-semibold">231 spaces (422 alternate)</span>
-                                </div>
-                                <div class="flex justify-between py-2">
-                                    <span class="text-gray-600 font-medium">Car Parking:</span>
-                                    <span class="text-gray-850 font-semibold">603 spaces</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="media-gallery" class="bg-white border border-soft-gray p-8">
-                    <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-3xl text-gray-850 montserrat-bold">Media Gallery</h2>
-                        <button class="text-gray-850 hover:text-gray-600 transition-colors font-semibold">
-                            View All (10)
-                            <i class="fa-solid fa-external-link ml-2"></i>
-                        </button>
-                    </div>
-                    <div class="relative">
-                        <!-- Left scroll arrow -->
-                        <button id="galleryScrollLeft" 
-                            class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <i class="fa-solid fa-chevron-left text-lg"></i>
-                        </button>
-                        
-                        <!-- Right scroll arrow -->
-                        <button id="galleryScrollRight" 
-                            class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <i class="fa-solid fa-chevron-right text-lg"></i>
-                        </button>
-                        
-                        <div id="galleryContainer" class="overflow-x-auto scrollbar-hide" style="scroll-behavior: smooth;">
-                            <div class="flex gap-6 pb-4" style="width: max-content;">
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-1.jpg"
-                                    alt="Aerial drone view of Loggins 100 Warehouse facility exterior">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-2.jpg"
-                                    alt="Drone footage of warehouse loading dock operations and truck access"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+2'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-3.jpg" alt="Interior warehouse space with high ceilings"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+3'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-4.jpg" alt="Office complex and administrative areas"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+4'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-5.jpg" alt="Truck parking and transportation access"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+5'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-6.jpg" alt="Aerial view of the complete facility"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+6'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-7.jpg" alt="Security and access control systems"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+7'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-8.jpg" alt="Storage and racking systems"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+8'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-9.jpg" alt="Construction and development progress"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+9'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="relative group cursor-pointer flex-shrink-0 w-48">
-                                <img class="aspect-video w-full object-cover rounded-lg"
-                                    src="images/gallery/photo-10.jpg" alt="Site location and surrounding area"
-                                    onerror="this.src='https://via.placeholder.com/400x225/e5e7eb/6b7280?text=Photo+10'">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center rounded-lg">
-                                    <i
-                                        class="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div id="interactive-site-plan" class="bg-white border border-soft-gray p-8">
-                    <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-3xl text-gray-850 montserrat-bold">Site Plan</h2>
-
-                    </div>
-                    <div class="relative bg-gray-100 h-96 flex items-center justify-center">
-                        <img class="absolute inset-0 w-full h-full object-cover"
-                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979092/images/1755545178207-Site%20plan.%20Loggins.jpg?GoogleAccessId=rga-400%40rgaautomations.iam.gserviceaccount.com&Expires=1913225178&Signature=SRDtM6ERekQPVwRnzweoOvDXlMaQSZ6FanRjfKKF%2BzzZuVXtSLdHUzGO5ZijYwn%2FcOrOpiad1yG817W3bccWZHOyq0oj37BLjvHi%2BluZM2uQ58BKWcaSd8O%2Bb69pGidiluuDwszbwfqKG5cAiygu2m0rTSI7P5adMZvRHl6yZT3L%2BqRqNZikAvJI3XXH6ff%2FMQUhlGnR53T9yTF7eyZXlnzx0MREZDQHOAAQMjAXdUcvbEgWgTmb3YRcV9q8tbZoh2hd8ZOZEnoWXLmEFyF%2FR3Rwka7RRoLHpqnOON4Yg7u4DKDnyEgQRNnViDcx1p%2FV5KszVQiyZDCBE3zAGNioBw%3D%3D"
-                            alt="aerial view of modern logistics warehouse facility with multiple loading docks, large industrial building, strategic location near highways, professional architecture photography">
-                    </div>
-                </div>
-                <div id="key-features" class="bg-white border border-soft-gray p-8">
-                    <h2 class="text-3xl text-gray-850 mb-8 montserrat-bold">Location Map</h2>
-                    <div class="relative">
-                        <div class="bg-gray-100 h-96 relative overflow-hidden">
-                            <!-- Google Maps -->
-                            <div id="google-map" class="absolute inset-0 w-full h-full"></div>
-
-                            <script>
-                                function initMap() {
-                                    // Coordinates for 1365 E Hightower Trail, Social Circle, GA 30025
-                                    // Exact coordinates from Google Maps: https://maps.app.goo.gl/xMDUi2dEgWpnUfRX8
-                                    const location = { lat: 33.649675, lng: -83.6877423 };
-
-                                    const map = new google.maps.Map(document.getElementById("google-map"), {
-                                        zoom: 15,
-                                        center: location,
-                                        mapTypeId: 'satellite',
-                                        disableDefaultUI: false,
-                                        zoomControl: true,
-                                        mapTypeControl: true,
-                                        scaleControl: true,
-                                        streetViewControl: true,
-                                        rotateControl: true,
-                                        fullscreenControl: true,
-                                        styles: [
-                                            {
-                                                featureType: "poi",
-                                                elementType: "labels",
-                                                stylers: [{ visibility: "off" }]
-                                            }
-                                        ]
-                                    });
-
-                                    // Custom marker icon similar to the original pseudo design
-                                    const customIcon = {
-                                        path: google.maps.SymbolPath.CIRCLE,
-                                        scale: 12,
-                                        fillColor: '#DC2626',
-                                        fillOpacity: 1,
-                                        strokeColor: '#FFFFFF',
-                                        strokeWeight: 3
-                                    };
-
-                                    const marker = new google.maps.Marker({
-                                        position: location,
-                                        map: map,
-                                        icon: customIcon,
-                                        title: "PNK Loggins Park 100 - 1365 E Hightower Trail, Social Circle, GA 30025",
-                                        animation: google.maps.Animation.DROP
-                                    });
-
-                                    const infoWindow = new google.maps.InfoWindow({
-                                        content: `
-                                            <div style="padding: 12px; font-family: Inter, sans-serif;">
-                                                <div style="margin-bottom: 8px; font-weight: bold; color: #2D2D2D; font-size: 14px;">PNK Loggins Park 100</div>
-                                                <div style="margin-bottom: 4px; color: #666; font-size: 12px;">1,013,902 SF • Available Now</div>
-                                                <div style="padding: 8px 0; border-top: 1px solid #eee; margin-top: 8px;">
-                                                    <div style="color: #666; font-size: 11px;">1365 E Hightower Trail</div>
-                                                    <div style="color: #666; font-size: 11px;">Social Circle, GA 30025</div>
-                                                </div>
-                                            </div>
-                                        `
-                                    });
-
-                                    marker.addListener("click", () => {
-                                        infoWindow.open(map, marker);
-                                    });
-
-                                    // Auto-open info window after a short delay
-                                    setTimeout(() => {
-                                        infoWindow.open(map, marker);
-                                    }, 1000);
-                                }
-                            </script>
-                            <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeDm5qMuABOhJ62aj4lbH2Aqkx74z-BxY&callback=initMap"></script>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-gray-50 p-6 border border-soft-gray">
-                            <h3 class="text-gray-850 mb-4 flex items-center montserrat-bold">
-                                <i class="fa-solid fa-location-dot text-gray-700 mr-3 text-xl"></i>
-                                Exact Address
-                            </h3>
-                            <p class="text-gray-700 mb-2 font-medium">1365 E Hightower Trail</p>
-                            <p class="text-gray-700 mb-2 font-medium">Social Circle, GA</p>
-                            <p class="text-gray-700 mb-4 font-medium">30025</p>
-                            <button
-                                class="text-gray-850 hover:text-gray-800 flex items-center font-semibold transition-colors">
-                                <i class="fa-solid fa-directions mr-2"></i>
-                                Get Directions
-                            </button>
-                        </div>
-
-                        <div class="bg-gray-50 p-6 border border-soft-gray">
-                            <h3 class="text-gray-850 mb-4 flex items-center montserrat-bold">
-                                <i class="fa-solid fa-clock text-gray-700 mr-3 text-xl"></i>
-                                Travel Times
-                            </h3>
-                            <div class="space-y-3">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700 font-medium">NYC Manhattan:</span>
-                                    <span class="text-gray-850 font-semibold">45 min</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700 font-medium">Philadelphia:</span>
-                                    <span class="text-gray-850 font-semibold">55 min</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700 font-medium">Newark Airport:</span>
-                                    <span class="text-gray-850 font-semibold">30 min</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700 font-medium">Port Elizabeth:</span>
-                                    <span class="text-gray-850 font-semibold">20 min</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div id="sidebar" class="lg:col-span-1 space-y-8">
-
-                <!-- Contact Cards -->
-                <div class="space-y-6">
-                    <!-- Vlad Ryabov -->
-                    <div class="bg-white border border-soft-gray p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold text-lg">VR</span>
-                            </div>
-                            <div>
-                                <div class="text-gray-850 font-bold text-lg">Vlad Ryabov</div>
-                                <div class="text-gray-600 text-sm">Property Manager</div>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-envelope text-gray-700 text-sm"></i>
-                                <a href="mailto:v.ryabov@pnk.group" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">v.ryabov@pnk.group</a>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-phone text-gray-700 text-sm"></i>
-                                <a href="tel:404.917.6871" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">404.917.6871</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Arin Rauf -->
-                    <div class="bg-white border border-soft-gray p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold text-lg">AR</span>
-                            </div>
-                            <div>
-                                <div class="text-gray-850 font-bold text-lg">Arin Rauf</div>
-                                <div class="text-gray-600 text-sm">Property Manager</div>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-envelope text-gray-700 text-sm"></i>
-                                <a href="mailto:a.rauf@pnk.group" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">a.rauf@pnk.group</a>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-phone text-gray-700 text-sm"></i>
-                                <a href="tel:332.248.6630" class="text-gray-700 hover:text-gray-800 transition-colors text-sm">332.248.6630</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mark Stiles -->
-                    <div class="bg-white border border-soft-gray p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold text-lg">MS</span>
-                            </div>
-                            <div>
-                                <div class="text-gray-850 font-bold text-lg">Mark Stiles</div>
-                                <div class="text-gray-600 text-sm">Property Manager</div>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-envelope text-orange-600 text-sm"></i>
-                                <a href="mailto:ms@pnk.group" class="text-gray-700 hover:text-orange-600 transition-colors text-sm">ms@pnk.group</a>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-phone text-orange-600 text-sm"></i>
-                                <a href="tel:404.457.8473" class="text-gray-700 hover:text-orange-600 transition-colors text-sm">404.457.8473</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="contact-form" class="bg-white border border-soft-gray p-8 sticky top-24">
-                    <h3 class="text-2xl text-gray-850 mb-6 montserrat-bold">Get More Information</h3>
-                    
-                    <!-- Initial Button State -->
-                    <div id="request-info-button" class="text-center">
-                        <button onclick="showContactForm()" 
-                            class="w-full bg-orange-600 text-white py-4 px-6 hover:bg-orange-700 transition-colors font-bold montserrat-bold rounded">
-                            Request Information
-                        </button>
-                        <p class="text-sm text-gray-600 mt-3">Get detailed information about this property including pricing, availability, and specifications.</p>
-                    </div>
-                    
-                    <!-- Contact Form (Initially Hidden) -->
-                    <div id="contact-form-container" class="hidden">
-                        <form class="space-y-5">
-                            <div>
-                                <label class="block text-gray-850 mb-2 font-semibold">Full Name *</label>
-                                <input type="text" required
-                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
-                                    placeholder="Enter your full name">
-                            </div>
-                            <div>
-                                <label class="block text-gray-850 mb-2 font-semibold">Company</label>
-                                <input type="text"
-                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
-                                    placeholder="Your company name">
-                            </div>
-                            <div>
-                                <label class="block text-gray-850 mb-2 font-semibold">Email Address *</label>
-                                <input type="email" required
-                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
-                                    placeholder="your.email@company.com">
-                            </div>
-                            <div>
-                                <label class="block text-gray-850 mb-2 font-semibold">Phone Number</label>
-                                <input type="tel"
-                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
-                                    placeholder="(555) 123-4567">
-                            </div>
-                            <div>
-                                <label class="block text-gray-850 mb-2 font-semibold">Message</label>
-                                <textarea rows="3"
-                                    class="w-full px-4 py-3 border-2 border-soft-gray focus:outline-none focus:ring-2 focus:ring-gray-850 focus:border-transparent rounded"
-                                    placeholder="Tell us about your requirements..."></textarea>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <input type="checkbox" id="consent-checkbox"
-                                    class="mt-1 border-2 border-soft-gray text-gray-850 focus:ring-gray-850">
-                                <label for="consent-checkbox" class="text-sm text-gray-600">I agree to receive communications about this property and related opportunities.</label>
-                            </div>
-                            <div class="flex gap-3">
-                                <button type="button" onclick="hideContactForm()"
-                                    class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 hover:bg-gray-300 transition-colors font-semibold rounded">
-                                    Cancel
-                                </button>
-                                <button type="submit"
-                                    class="flex-1 bg-orange-600 text-white py-3 px-4 hover:bg-orange-700 transition-colors font-bold montserrat-bold rounded">
-                                    Send Inquiry
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Photo Modal -->
-    <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
-        <div class="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
-            <!-- Close Button -->
-            <button id="closeModal"
-                class="absolute top-4 right-4 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 transition-colors">
-                <i class="fa-solid fa-times text-2xl"></i>
-            </button>
-
-            <!-- Navigation Buttons -->
-            <button id="prevPhoto"
-                class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-3 transition-colors">
-                <i class="fa-solid fa-chevron-left text-xl"></i>
-            </button>
-            <button id="nextPhoto"
-                class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-3 transition-colors">
-                <i class="fa-solid fa-chevron-right text-xl"></i>
-            </button>
-
-            <!-- Photo Container -->
-            <div class="relative w-full h-full flex items-center justify-center">
-                <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
-
-                <!-- Photo Info -->
-                <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-70 text-white p-4 rounded-lg">
-                    <h3 id="modalTitle" class="text-lg font-bold mb-2"></h3>
-                    <p id="modalDescription" class="text-sm opacity-90"></p>
-                    <div class="flex justify-between items-center mt-2">
-                        <span id="modalCounter" class="text-xs opacity-75"></span>
-                        <div class="flex space-x-2">
-                            <button id="downloadPhoto"
-                                class="text-xs bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded transition-colors">
-                                <i class="fa-solid fa-download mr-1"></i>Download
-                            </button>
-                            <button id="sharePhoto"
-                                class="text-xs bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded transition-colors">
-                                <i class="fa-solid fa-share mr-1"></i>Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Photo Modal Functionality
-        class PhotoModal {
-            constructor() {
-                this.modal = document.getElementById('photoModal');
-                this.modalImage = document.getElementById('modalImage');
-                this.modalTitle = document.getElementById('modalTitle');
-                this.modalDescription = document.getElementById('modalDescription');
-                this.modalCounter = document.getElementById('modalCounter');
-                this.closeBtn = document.getElementById('closeModal');
-                this.prevBtn = document.getElementById('prevPhoto');
-                this.nextBtn = document.getElementById('nextPhoto');
-                this.downloadBtn = document.getElementById('downloadPhoto');
-                this.shareBtn = document.getElementById('sharePhoto');
-
-                this.photos = [];
-                this.currentIndex = 0;
-
-                this.init();
-            }
-
-            init() {
-                // Collect all gallery photos
-                const galleryImages = document.querySelectorAll('#media-gallery .grid img');
-                galleryImages.forEach((img, index) => {
-                    this.photos.push({
-                        src: img.src,
-                        alt: img.alt,
-                        title: `Photo ${index + 1}`,
-                        description: img.alt
-                    });
-
-                    // Add click event to each photo
-                    img.parentElement.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        this.openModal(index);
-                    });
-                });
-
-                // Event listeners
-                this.closeBtn.addEventListener('click', () => this.closeModal());
-                this.prevBtn.addEventListener('click', () => this.prevPhoto());
-                this.nextBtn.addEventListener('click', () => this.nextPhoto());
-                this.downloadBtn.addEventListener('click', () => this.downloadPhoto());
-                this.shareBtn.addEventListener('click', () => this.sharePhoto());
-
-                // Close on background click
-                this.modal.addEventListener('click', (e) => {
-                    if (e.target === this.modal) {
-                        this.closeModal();
-                    }
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (!this.modal.classList.contains('hidden')) {
-                        switch (e.key) {
-                            case 'Escape':
-                                this.closeModal();
-                                break;
-                            case 'ArrowLeft':
-                                this.prevPhoto();
-                                break;
-                            case 'ArrowRight':
-                                this.nextPhoto();
-                                break;
-                        }
-                    }
-                });
-            }
-
-            openModal(index) {
-                this.currentIndex = index;
-                this.updateModal();
-                this.modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-
-            closeModal() {
-                this.modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-
-            updateModal() {
-                const photo = this.photos[this.currentIndex];
-                this.modalImage.src = photo.src;
-                this.modalImage.alt = photo.alt;
-                this.modalTitle.textContent = photo.title;
-                this.modalDescription.textContent = photo.description;
-                this.modalCounter.textContent = `${this.currentIndex + 1} of ${this.photos.length}`;
-
-                // Update navigation button states
-                this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
-                this.nextBtn.style.opacity = this.currentIndex === this.photos.length - 1 ? '0.5' : '1';
-            }
-
-            prevPhoto() {
-                if (this.currentIndex > 0) {
-                    this.currentIndex--;
-                    this.updateModal();
-                }
-            }
-
-            nextPhoto() {
-                if (this.currentIndex < this.photos.length - 1) {
-                    this.currentIndex++;
-                    this.updateModal();
-                }
-            }
-
-            downloadPhoto() {
-                const photo = this.photos[this.currentIndex];
-                const link = document.createElement('a');
-                link.href = photo.src;
-                link.download = `loggins-warehouse-${this.currentIndex + 1}.jpg`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-
-            sharePhoto() {
-                const photo = this.photos[this.currentIndex];
-                if (navigator.share) {
-                    navigator.share({
-                        title: photo.title,
-                        text: photo.description,
-                        url: window.location.href
-                    });
-                } else {
-                    // Fallback: copy URL to clipboard
-                    navigator.clipboard.writeText(window.location.href).then(() => {
-                        alert('Link copied to clipboard!');
-                    });
-                }
-            }
-        }
-
-        // Gallery Scroll Functionality
-        class GalleryScroll {
-            constructor() {
-                this.container = document.getElementById('galleryContainer');
-                this.leftBtn = document.getElementById('galleryScrollLeft');
-                this.rightBtn = document.getElementById('galleryScrollRight');
-                this.scrollAmount = 300; // pixels to scroll per click
-                
-                this.init();
-            }
-            
-            init() {
-                if (!this.container || !this.leftBtn || !this.rightBtn) return;
-                
-                // Add event listeners
-                this.leftBtn.addEventListener('click', () => this.scrollLeft());
-                this.rightBtn.addEventListener('click', () => this.scrollRight());
-                
-                // Update button states on scroll
-                this.container.addEventListener('scroll', () => this.updateButtonStates());
-                
-                // Initial button state update
-                this.updateButtonStates();
-            }
-            
-            scrollLeft() {
-                this.container.scrollBy({
-                    left: -this.scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
-            
-            scrollRight() {
-                this.container.scrollBy({
-                    left: this.scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
-            
-            updateButtonStates() {
-                const { scrollLeft, scrollWidth, clientWidth } = this.container;
-                
-                // Disable left button if at the start
-                this.leftBtn.disabled = scrollLeft <= 0;
-                
-                // Disable right button if at the end
-                this.rightBtn.disabled = scrollLeft >= scrollWidth - clientWidth - 1;
-            }
-        }
-
-        // Contact Form Toggle Functions
-        function showContactForm() {
-            document.getElementById('request-info-button').classList.add('hidden');
-            document.getElementById('contact-form-container').classList.remove('hidden');
-        }
+    <!-- Main Content - Two Column Layout -->
+    <div class="flex" style="height: calc(100vh - 300px);">
         
-        function hideContactForm() {
-            document.getElementById('contact-form-container').classList.add('hidden');
-            document.getElementById('request-info-button').classList.remove('hidden');
+        <!-- Left Column - Map (2/3 width) -->
+        <div class="w-2/3 relative">
+            <div id="properties-map" class="w-full h-full"></div>
+        </div>
+
+        <!-- Right Column - Properties List (1/3 width) -->
+        <div class="w-1/3 bg-white border-l border-soft-gray overflow-y-auto">
+            <!-- Filter Section -->
+            <div class="sticky top-0 bg-gray-100 border-b border-soft-gray p-4 z-20">
+                <div class="flex flex-wrap gap-2">
+                    <select class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-850 flex-1">
+                        <option>All States</option>
+                        <option>Georgia</option>
+                        <option>North Carolina</option>
+                    </select>
+                    <select class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-850 flex-1">
+                        <option>Size Range</option>
+                        <option>&lt; 250,000 SF</option>
+                        <option>250,000 - 500,000 SF</option>
+                        <option>500,000 - 1M SF</option>
+                        <option>&gt; 1M SF</option>
+                    </select>
+                    <select class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-850 flex-1">
+                        <option>Availability</option>
+                        <option>Available</option>
+                        <option>Under Construction</option>
+                        <option>Planned</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Properties List -->
+            <div class="divide-y divide-gray-200">
+                <!-- Lambert Park A -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                            alt="Lambert Park A">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Lambert Park A</h3>
+                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">1,219,826 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">1,219,826 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">40'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lambert Park B -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                            alt="Lambert Park B">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Lambert Park B</h3>
+                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">1,104,320 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">1,104,320 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">40'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Loggins Park 100 -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.649675" data-lng="-83.6877423">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png"
+                            alt="Loggins Park 100">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Loggins Park 100</h3>
+                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">1,013,902 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">1,013,902 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">40'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- High Point -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="35.9557" data-lng="-80.0053">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05065/images/1749355594642-High-Point-planImage.jpg"
+                            alt="High Point">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">High Point</h3>
+                            <p class="text-sm text-gray-600">High Point, NC</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">1,050,560 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">1,050,560 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">36'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Griffin 2 -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.2468" data-lng="-84.2641">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg"
+                            alt="Griffin 2">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Griffin 2</h3>
+                            <p class="text-sm text-gray-600">Griffin, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">968,369 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">968,369 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">40'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Loggins Park 200 -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.6497" data-lng="-83.6877">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979093/images/1753735614134-Loggins_Loggins%20Bldg%20200.jpg"
+                            alt="Loggins Park 200">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Loggins Park 200</h3>
+                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Under Construction</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">772,071 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">772,071 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">36'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Loggins Park 300 -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.6497" data-lng="-83.6877">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979094/images/1753735643060-Loggins_Loggins%20Bldg%20300.jpg"
+                            alt="Loggins Park 300">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Loggins Park 300</h3>
+                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Planned</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">544,626 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">544,626 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">32'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lambert Park C -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                            alt="Lambert Park C">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Lambert Park C</h3>
+                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">425,660 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">425,660 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">32'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lambert Park D -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05035/images/1749355571603-Lambert-D-planImage.png"
+                            alt="Lambert Park D">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Lambert Park D</h3>
+                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">367,165 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">367,165 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">32'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lambert Park E -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05041/images/1749355578222-Lambert-E-planImage.png"
+                            alt="Lambert Park E">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Lambert Park E</h3>
+                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">211,399 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">211,399 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">32'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Griffin 1 -->
+                <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.2468" data-lng="-84.2641">
+                    <!-- Image Thumbnail -->
+                    <div class="mb-3">
+                        <img class="w-full h-32 object-cover rounded-lg" 
+                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979097/images/1755878216841-Griffin_Overview_v02.png"
+                            alt="Griffin 1">
+                    </div>
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-850">Griffin 1</h3>
+                            <p class="text-sm text-gray-600">Griffin, GA</p>
+                        </div>
+                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Building Size:</span>
+                            <span class="text-gray-850 font-semibold">306,159 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available:</span>
+                            <span class="text-gray-850 font-semibold">306,159 SF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clear Height:</span>
+                            <span class="text-gray-850 font-semibold">32'</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Maps Script -->
+    <script>
+        let map;
+        let markers = [];
+        let infoWindow;
+
+        function initMap() {
+            // Center map on Southeast US
+            const center = { lat: 35.5175, lng: -86.5804 };
+
+            map = new google.maps.Map(document.getElementById("properties-map"), {
+                zoom: 6,
+                center: center,
+                mapTypeControl: true,
+                streetViewControl: false,
+                fullscreenControl: true,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+
+            infoWindow = new google.maps.InfoWindow();
+
+            // Add markers for each property
+            const properties = [
+                {
+                    position: { lat: 33.4734, lng: -84.1557 },
+                    title: "Lambert Park A",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert Park A</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,219,826 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.4734, lng: -84.1557 },
+                    title: "Lambert Park B",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert Park B</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,104,320 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.649675, lng: -83.6877423 },
+                    title: "Loggins Park 100",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins Park 100</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,013,902 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 35.9557, lng: -80.0053 },
+                    title: "High Point",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">High Point</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">High Point, NC</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,050,560 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.2468, lng: -84.2641 },
+                    title: "Griffin 2",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Griffin 2</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Griffin, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">968,369 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.6497, lng: -83.6877 },
+                    title: "Loggins Park 200",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins Park 200</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">772,071 SF Under Construction</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.6497, lng: -83.6877 },
+                    title: "Loggins Park 300",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins Park 300</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">544,626 SF Planned</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.4734, lng: -84.1557 },
+                    title: "Lambert Park C",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert Park C</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">425,660 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.4734, lng: -84.1557 },
+                    title: "Lambert Park D",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert Park D</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">367,165 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.4734, lng: -84.1557 },
+                    title: "Lambert Park E",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert Park E</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">211,399 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                },
+                {
+                    position: { lat: 33.2468, lng: -84.2641 },
+                    title: "Griffin 1",
+                    info: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Griffin 1</h4>
+                            <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Griffin, GA</p>
+                            <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">306,159 SF Available</p>
+                            <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
+                        </div>
+                    `
+                }
+            ];
+
+            // Create markers with position adjustments for overlapping locations
+            properties.forEach((property, index) => {
+                // Adjust positions slightly for properties at same location
+                let adjustedPosition = { ...property.position };
+                
+                // For Lambert Park properties (same location)
+                if (property.title.includes("Lambert Park")) {
+                    const lambertIndex = properties.filter(p => p.title.includes("Lambert Park")).indexOf(property);
+                    adjustedPosition.lat += lambertIndex * 0.002;
+                    adjustedPosition.lng += lambertIndex * 0.002;
+                }
+                
+                // For Loggins Park properties (same location)
+                if (property.title.includes("Loggins Park")) {
+                    const logginsIndex = properties.filter(p => p.title.includes("Loggins Park")).indexOf(property);
+                    adjustedPosition.lat += logginsIndex * 0.002;
+                    adjustedPosition.lng -= logginsIndex * 0.002;
+                }
+                
+                // For Griffin properties (same location)
+                if (property.title.includes("Griffin")) {
+                    const griffinIndex = properties.filter(p => p.title.includes("Griffin")).indexOf(property);
+                    adjustedPosition.lat -= griffinIndex * 0.002;
+                    adjustedPosition.lng += griffinIndex * 0.002;
+                }
+                
+                const marker = new google.maps.Marker({
+                    position: adjustedPosition,
+                    map: map,
+                    title: property.title,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 10,
+                        fillColor: '#54565a',
+                        fillOpacity: 1,
+                        strokeColor: '#FFFFFF',
+                        strokeWeight: 2
+                    },
+                    animation: google.maps.Animation.DROP
+                });
+
+                marker.addListener("click", () => {
+                    infoWindow.setContent(property.info);
+                    infoWindow.open(map, marker);
+                    
+                    // Highlight corresponding property card
+                    highlightPropertyCard(index);
+                });
+
+                markers.push(marker);
+            });
+
+            // Add click event to property cards
+            document.querySelectorAll('.property-card').forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    // Center map on property
+                    if (markers[index]) {
+                        map.setCenter(markers[index].getPosition());
+                        map.setZoom(12);
+                        
+                        // Open info window
+                        const property = properties[index];
+                        infoWindow.setContent(property.info);
+                        infoWindow.open(map, markers[index]);
+                        
+                        // Highlight card
+                        highlightPropertyCard(index);
+                    }
+                });
+
+                // Add hover effect to highlight marker
+                card.addEventListener('mouseenter', () => {
+                    if (markers[index]) {
+                        markers[index].setIcon({
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 12,
+                            fillColor: '#DC2626',
+                            fillOpacity: 1,
+                            strokeColor: '#FFFFFF',
+                            strokeWeight: 3
+                        });
+                    }
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    if (markers[index]) {
+                        markers[index].setIcon({
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 10,
+                            fillColor: '#54565a',
+                            fillOpacity: 1,
+                            strokeColor: '#FFFFFF',
+                            strokeWeight: 2
+                        });
+                    }
+                });
+            });
         }
 
-        // Initialize modal when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            new PhotoModal();
-            new GalleryScroll();
-        });
+        function highlightPropertyCard(index) {
+            // Remove previous highlights
+            document.querySelectorAll('.property-card').forEach(card => {
+                card.classList.remove('bg-gray-100');
+            });
+            
+            // Add highlight to selected card
+            const cards = document.querySelectorAll('.property-card');
+            if (cards[index]) {
+                cards[index].classList.add('bg-gray-100');
+                cards[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeDm5qMuABOhJ62aj4lbH2Aqkx74z-BxY&callback=initMap">
     </script>
 
 </body>
