@@ -11,6 +11,28 @@
     
     <!-- Centralized CSS System -->
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Custom scrollbar styles for properties list */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Firefox */
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
+    </style>
     <script>tailwind.config = {
             "theme": {
                 "extend": {
@@ -55,7 +77,7 @@
     </div>
 
     <!-- Main Content - Two Column Layout -->
-    <div class="flex" style="height: calc(100vh - 300px);">
+    <div class="flex pt-2 bg-gray-850" style="height: calc(100vh - 310px);">
         
         <!-- Left Column - Map (2/3 width) -->
         <div class="w-2/3 relative">
@@ -63,7 +85,7 @@
         </div>
 
         <!-- Right Column - Properties List (1/3 width) -->
-        <div class="w-1/3 bg-white border-l border-soft-gray overflow-y-auto">
+        <div class="w-1/3 bg-white border-l border-soft-gray custom-scrollbar" style="max-height: 100%; overflow-y: auto;">
             <!-- Filter Section -->
             <div class="sticky top-0 bg-gray-100 border-b border-soft-gray p-4 z-20">
                 <div class="flex flex-wrap gap-2">
@@ -90,355 +112,333 @@
             
             <!-- Properties List -->
             <div class="divide-y divide-gray-200">
-                <!-- Lambert Park A -->
+                <!-- Lambert A -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
-                            alt="Lambert Park A">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Lambert A</h3>
-                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                                alt="Lambert A">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">1,219,826 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Lambert A</h3>
+                                    <p class="text-xs text-gray-600">1305 Hwy 42 South, McDonough, GA 30252</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">1,219,826 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">40'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Lambert Park B -->
+                <!-- Lambert B -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
-                            alt="Lambert Park B">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Lambert B</h3>
-                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                                alt="Lambert B">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">1,104,320 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Lambert B</h3>
+                                    <p class="text-xs text-gray-600">1305 Hwy 42 South, McDonough, GA 30252</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">1,104,320 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">40'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Loggins Park 100 -->
+                <!-- Loggins 100 -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.649675" data-lng="-83.6877423">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png"
-                            alt="Loggins Park 100">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Loggins 100</h3>
-                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05011/images/1749355548783-Loggins-100-planImage.png"
+                                alt="Loggins 100">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">1,013,902 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Loggins 100</h3>
+                                    <p class="text-xs text-gray-600">1365 E Hightower Trail, Social Circle, GA 30025</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">1,013,902 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">40'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
                 <!-- High Point -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="35.9557" data-lng="-80.0053">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05065/images/1749355594642-High-Point-planImage.jpg"
-                            alt="High Point">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">High Point</h3>
-                            <p class="text-sm text-gray-600">High Point, NC</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05065/images/1749355594642-High-Point-planImage.jpg"
+                                alt="High Point">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">1,050,560 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK High Point</h3>
+                                    <p class="text-xs text-gray-600">1101 Gallimore Dairy Rd., High Point, NC 27265</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">1,050,560 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">36'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
                 <!-- Griffin 2 -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.2468" data-lng="-84.2641">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg"
-                            alt="Griffin 2">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Griffin 2</h3>
-                            <p class="text-sm text-gray-600">Griffin, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979098/images/1753735398940-Griffin_Griffin%20Bldg%202.jpg"
+                                alt="Griffin 2">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">968,369 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Griffin 2</h3>
+                                    <p class="text-xs text-gray-600">35 S McDonough Rd, Griffin, GA</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">968,369 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">40'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Loggins Park 200 -->
+                <!-- Loggins 200 -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.6497" data-lng="-83.6877">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979093/images/1753735614134-Loggins_Loggins%20Bldg%20200.jpg"
-                            alt="Loggins Park 200">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Loggins 200</h3>
-                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979093/images/1753735614134-Loggins_Loggins%20Bldg%20200.jpg"
+                                alt="Loggins 200">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Under Construction</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">772,071 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Loggins 200</h3>
+                                    <p class="text-xs text-gray-600">1365 E Hightower Trail, Social Circle, GA 30025</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Under Construction</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">772,071 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">36'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Loggins Park 300 -->
+                <!-- Loggins 300 -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.6497" data-lng="-83.6877">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979094/images/1753735643060-Loggins_Loggins%20Bldg%20300.jpg"
-                            alt="Loggins Park 300">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Loggins 300</h3>
-                            <p class="text-sm text-gray-600">Social Circle, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979094/images/1753735643060-Loggins_Loggins%20Bldg%20300.jpg"
+                                alt="Loggins 300">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Planned</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">544,626 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Loggins 300</h3>
+                                    <p class="text-xs text-gray-600">1365 E Hightower Trail, Social Circle, GA 30025</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Planned</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">544,626 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">32'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Lambert Park C -->
+                <!-- Lambert C -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
-                            alt="Lambert Park C">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Lambert C</h3>
-                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b04feb/images/1749355530821-Lambert-A-planImage.png"
+                                alt="Lambert C">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">425,660 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Lambert C</h3>
+                                    <p class="text-xs text-gray-600">1305 Hwy 42 South, McDonough, GA 30252</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">425,660 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">32'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Lambert Park D -->
+                <!-- Lambert D -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05035/images/1749355571603-Lambert-D-planImage.png"
-                            alt="Lambert Park D">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Lambert D</h3>
-                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05035/images/1749355571603-Lambert-D-planImage.png"
+                                alt="Lambert D">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">367,165 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Lambert D</h3>
+                                    <p class="text-xs text-gray-600">1305 Hwy 42 South, McDonough, GA 30252</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">367,165 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">32'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Lambert Park E -->
+                <!-- Lambert E -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.4734" data-lng="-84.1557">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05041/images/1749355578222-Lambert-E-planImage.png"
-                            alt="Lambert Park E">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Lambert E</h3>
-                            <p class="text-sm text-gray-600">McDonough, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68436cc7f830586ef2b05041/images/1749355578222-Lambert-E-planImage.png"
+                                alt="Lambert E">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">211,399 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Lambert E</h3>
+                                    <p class="text-xs text-gray-600">1305 Hwy 42 South, McDonough, GA 30252</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">211,399 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">32'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
 
                 <!-- Griffin 1 -->
                 <div class="p-4 hover:bg-gray-50 transition-colors cursor-pointer property-card" data-lat="33.2468" data-lng="-84.2641">
-                    <!-- Image Thumbnail -->
-                    <div class="mb-3">
-                        <img class="w-full h-32 object-cover rounded-lg" 
-                            src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979097/images/1755878216841-Griffin_Overview_v02.png"
-                            alt="Griffin 1">
-                    </div>
-                    <div class="flex items-start justify-between mb-3">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-850">Griffin 1</h3>
-                            <p class="text-sm text-gray-600">Griffin, GA</p>
+                    <div class="flex gap-3">
+                        <!-- Image Thumbnail (Left) -->
+                        <div class="w-1/3 flex-shrink-0">
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <img class="absolute inset-0 w-full h-full object-cover rounded" 
+                                src="https://storage.googleapis.com/pnkdata/projects/68461383195672f73b979097/images/1755878216841-Griffin_Overview_v02.png"
+                                alt="Griffin 1">
+                            </div>
                         </div>
-                        <span class="px-2 py-1 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Building Size:</span>
-                            <span class="text-gray-850 font-semibold">306,159 SF</span>
+                        <!-- Details (Right) -->
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-base font-bold text-gray-850">PNK Griffin 1</h3>
+                                    <p class="text-xs text-gray-600">35 S McDonough Rd, Griffin, GA</p>
+                                </div>
+                                <span class="px-2 py-0.5 bg-gray-850 text-white text-xs font-semibold rounded">Available</span>
+                            </div>
+                            <div class="text-xs text-gray-850 font-semibold mb-2">306,159 SF</div>
+                            <div class="mt-auto">
+                                <a href="design.html" class="text-xs text-gray-850 hover:text-gray-600 font-semibold transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Clear Height:</span>
-                            <span class="text-gray-850 font-semibold">32'</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <a href="design.html" class="text-sm text-gray-850 hover:text-gray-600 font-semibold transition-colors">
-                            View Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -476,10 +476,10 @@
             const properties = [
                 {
                     position: { lat: 33.4734, lng: -84.1557 },
-                    title: "Lambert A",
+                    title: "PNK Lambert A",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert A</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Lambert A</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,219,826 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -488,10 +488,10 @@
                 },
                 {
                     position: { lat: 33.4734, lng: -84.1557 },
-                    title: "Lambert B",
+                    title: "PNK Lambert B",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert B</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Lambert B</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,104,320 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -500,10 +500,10 @@
                 },
                 {
                     position: { lat: 33.649675, lng: -83.6877423 },
-                    title: "Loggins 100",
+                    title: "PNK Loggins 100",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins 100</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Loggins 100</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,013,902 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -512,10 +512,10 @@
                 },
                 {
                     position: { lat: 35.9557, lng: -80.0053 },
-                    title: "High Point",
+                    title: "PNK High Point",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">High Point</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK High Point</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">High Point, NC</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">1,050,560 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -524,10 +524,10 @@
                 },
                 {
                     position: { lat: 33.2468, lng: -84.2641 },
-                    title: "Griffin 2",
+                    title: "PNK Griffin 2",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Griffin 2</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Griffin 2</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Griffin, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">968,369 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -536,10 +536,10 @@
                 },
                 {
                     position: { lat: 33.6497, lng: -83.6877 },
-                    title: "Loggins 200",
+                    title: "PNK Loggins 200",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins 200</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Loggins 200</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">772,071 SF Under Construction</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -548,10 +548,10 @@
                 },
                 {
                     position: { lat: 33.6497, lng: -83.6877 },
-                    title: "Loggins 300",
+                    title: "PNK Loggins 300",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Loggins 300</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Loggins 300</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Social Circle, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">544,626 SF Planned</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -560,10 +560,10 @@
                 },
                 {
                     position: { lat: 33.4734, lng: -84.1557 },
-                    title: "Lambert C",
+                    title: "PNK Lambert C",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert C</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Lambert C</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">425,660 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -572,10 +572,10 @@
                 },
                 {
                     position: { lat: 33.4734, lng: -84.1557 },
-                    title: "Lambert D",
+                    title: "PNK Lambert D",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert D</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Lambert D</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">367,165 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -584,10 +584,10 @@
                 },
                 {
                     position: { lat: 33.4734, lng: -84.1557 },
-                    title: "Lambert E",
+                    title: "PNK Lambert E",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Lambert E</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Lambert E</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">McDonough, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">211,399 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
@@ -596,10 +596,10 @@
                 },
                 {
                     position: { lat: 33.2468, lng: -84.2641 },
-                    title: "Griffin 1",
+                    title: "PNK Griffin 1",
                     info: `
                         <div style="padding: 10px; min-width: 200px;">
-                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">Griffin 1</h4>
+                            <h4 style="margin: 0 0 8px 0; font-weight: bold;">PNK Griffin 1</h4>
                             <p style="margin: 0 0 4px 0; color: #666; font-size: 13px;">Griffin, GA</p>
                             <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">306,159 SF Available</p>
                             <a href="design.html" style="color: #54565a; font-weight: bold; text-decoration: none; font-size: 13px;">View Details →</a>
